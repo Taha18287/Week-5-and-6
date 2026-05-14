@@ -173,7 +173,7 @@ app.get('/dashboard', verifyToken, (req, res) => {
    =========================
 ========================= */
 
-/* ❌ VULNERABLE LOGIN (SQLi) */
+/*  VULNERABLE LOGIN (SQLi) */
 app.post('/vuln-login', (req, res) => {
   const { username, password } = req.body;
 
@@ -188,7 +188,7 @@ app.post('/vuln-login', (req, res) => {
   res.status(401).json({ success: false });
 });
 
-/* 🔐 SECURE LOGIN (FIXED SQLi) */
+/* SECURE LOGIN (FIXED SQLi) */
 app.post('/secure-login', (req, res) => {
   const { username, password } = req.body;
 
